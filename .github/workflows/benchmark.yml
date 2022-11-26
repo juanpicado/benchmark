@@ -132,8 +132,8 @@ jobs:
         shell: bash
       - name: rename
         run: |
-         mkdir -v -p ./benchmark_raw/${GITHUB_SHA}
-         mv -v ./hyper-results.json ./benchmark_raw/${GITHUB_SHA}/hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
+         mkdir -v -p ./benchmark_raw/${{github.sha}}
+         mv -v ./hyper-results.json ./benchmark_raw/${{github.sha}}/hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
       - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
           name: verdaccio-metrics
