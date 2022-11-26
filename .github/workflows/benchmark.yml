@@ -80,7 +80,7 @@ jobs:
           DEBUG: metrics*
       - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
-          name: verdaccio-metrics-api
+          name: autocannon
           path: ./api-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json  
           if-no-files-found: error
           retention-days: 10 
@@ -131,7 +131,7 @@ jobs:
         run: mv ./hyper-results.json ./hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json        
       - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
-          name: verdaccio-metrics
+          name: hyperfine
           path: ./hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
           if-no-files-found: error
           retention-days: 10    
