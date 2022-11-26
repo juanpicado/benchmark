@@ -2,6 +2,7 @@
 name: ci - benchmark
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     # 1 time peer week
