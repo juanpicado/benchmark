@@ -134,7 +134,7 @@ jobs:
       - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
           name: verdaccio-metrics
-          path: ./benchmark_raw/${{github.sha}}/*  
+          path: ./benchmark_raw
           if-no-files-found: error
           retention-days: 10    
   save:
@@ -147,13 +147,16 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - uses: actions/download-artifact@v3
         with:
-          name: verdaccio-metrics
+          # name: verdaccio-metrics
+          path: ./${{github.workspace}/benchmark/${{github.sha}}
+      - name: Display structure of downloaded files
+        run: ls -R          
       # - uses: actions/download-artifact@v3
       #   with:
       #     name: verdaccio-metrics-api
-      - name: Commit & Push changes
-        uses: actions-js/push@a52398fac807b0c1e5f1492c969b477c8560a0ba # tag=v1.3
-        with:
-           github_token: ${{ secrets.GITHUB_TOKEN }}
-           message: "chore: updated metrics"
-           branch: main     
+      # - name: Commit & Push changes
+      #   uses: actions-js/push@a52398fac807b0c1e5f1492c969b477c8560a0ba # tag=v1.3
+      #   with:
+      #      github_token: ${{ secrets.GITHUB_TOKEN }}
+      #      message: "chore: updated metrics"
+      #      branch: main     
