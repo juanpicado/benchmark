@@ -50,7 +50,7 @@ jobs:
       matrix:
         benchmark:
           - info
-          - tarball
+          # - tarball
         verdaccioVersion:
           - 3.13.1
           - 4.12.2
@@ -93,7 +93,7 @@ jobs:
       matrix:
         benchmark:
           - info
-          - tarball
+          # - tarball
         verdaccioVersion:
           # future 6.x (wip)
           # - local (master branch)
