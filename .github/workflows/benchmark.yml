@@ -86,17 +86,6 @@ jobs:
           path: ./api-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json  
           if-no-files-found: error
           retention-days: 10 
-      - name: submit metrics
-        run: pnpm benchmark:submit
-        env:
-          DEBUG: metrics
-          METRICS_SOURCE: autocannon
-          METRICS_URL: ${{ secrets.METRICS_URL }}
-          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
-          METRICS_BENCHMARK: ${{matrix.benchmark}}
-          METRICS_VERSION: ${{matrix.verdaccioVersion}}
-          METRICS_COMMIT_HASH: ${{ github.sha }}
-          METRICS_FILE_NAME: 'api-results'   
   benchmark:
     needs: prepare
     strategy:
