@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "benchmark:hyper": "ts-node src/index.ts -- hyper -r ./hyper-results.json",
-    "benchmark:api": "ts-node src/index.ts -- api"
+    "benchmark:hyper": "ts-node src/index.ts hyper -r ./hyper-results.json",
+    "benchmark:api": "ts-node src/index.ts api"
   },
   "dependencies": {
     "debug": "4.3.4",
