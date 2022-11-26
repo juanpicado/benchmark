@@ -130,10 +130,18 @@ jobs:
         # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell
         shell: bash
       - name: rename
-        run: mv ./hyper-results.json ./hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
-      - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
+        run: |
+         mkdir -v -p ./benchmark_raw/${$GITHUB_SHA}
+         mv -v ./hyper-results.json ./benchmark_raw/${$GITHUB_SHA}/hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
+      # - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
+      #   with:
+      #     name: verdaccio-metrics
+      #     path: ./hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json  
+      #     if-no-files-found: error
+      #     retention-days: 10
+      - name: Commit & Push changes
+        uses: actions-js/push@a52398fac807b0c1e5f1492c969b477c8560a0ba # tag=v1.3
         with:
-          name: verdaccio-metrics
-          path: ./hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json  
-          if-no-files-found: error
-          retention-days: 10
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: "chore: updated static data"
+          branch: main         
