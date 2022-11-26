@@ -43,15 +43,6 @@ jobs:
           key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             pnpm-              
-      - name: build
-        run: pnpm build
-      - name: tar packages
-        run: |      
-          tar -czvf ${{ github.workspace }}/pkg.tar.gz -C ${{ github.workspace }}/packages .
-      - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
-        with:
-          name: verdaccio-artifact
-          path: pkg.tar.gz
   benchmark-autocannon:
     needs: prepare
     strategy:
@@ -76,8 +67,6 @@ jobs:
       - uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7 # tag=v3
         with:
           name: verdaccio-artifact
-      - name: untar packages
-        run: tar -xzvf pkg.tar.gz -C ${{ github.workspace }}/packages          
       - name: Install pnpm
         run: |
           corepack enable
