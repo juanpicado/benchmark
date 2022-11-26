@@ -7,8 +7,8 @@ on:
     # every 8 hours
     - cron: '0 */8 * * *'
   push:
-    # branches:
-    #   - dev
+    branches:
+      - dev
 
 jobs:
   prepare: 
@@ -79,7 +79,7 @@ jobs:
       - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
           name: autocannon
-          path: ./${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json  
+          path: ./api-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json  
           if-no-files-found: error
           retention-days: 10 
   benchmark-hyper:
@@ -130,7 +130,7 @@ jobs:
       - uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb # tag=v3
         with:
           name: hyperfine
-          path: ./${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
+          path: ./hyper-results-${{matrix.verdaccioVersion}}-${{matrix.benchmark}}.json
           if-no-files-found: error
           retention-days: 10    
   save:
