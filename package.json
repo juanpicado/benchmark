@@ -6,7 +6,11 @@
   "main": "index.js",
   "scripts": {
     "benchmark:hyper": "ts-node src/index.ts hyper -r ./hyper-results.json",
-    "benchmark:api": "ts-node src/index.ts api"
+    "benchmark:api": "ts-node src/index.ts api",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
@@ -17,7 +21,12 @@
     "semver": "7.3.8",
     "autocannon": "7.10.0",
     "ts-node": "10.9.1",
-    "typescript": "4.9.3"
+    "typescript": "4.9.3",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "author": "Juan Picado <juanpicado19@gmail.com>",
   "license": "MIT"
