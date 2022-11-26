@@ -148,7 +148,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           # name: verdaccio-metrics
-          path: ./${{github.workspace}}/benchmark/${{github.sha}}
+          path: ./benchmark/${{github.sha}}
       - name: Display structure of downloaded files
         run: ls -R          
       - uses: actions/download-artifact@v3
