@@ -151,12 +151,12 @@ jobs:
           path: ./${{github.workspace}}/benchmark/${{github.sha}}
       - name: Display structure of downloaded files
         run: ls -R          
-      # - uses: actions/download-artifact@v3
-      #   with:
-      #     name: verdaccio-metrics-api
-      # - name: Commit & Push changes
-      #   uses: actions-js/push@a52398fac807b0c1e5f1492c969b477c8560a0ba # tag=v1.3
-      #   with:
-      #      github_token: ${{ secrets.GITHUB_TOKEN }}
-      #      message: "chore: updated metrics"
-      #      branch: main     
+      - uses: actions/download-artifact@v3
+        with:
+          name: verdaccio-metrics-api
+      - name: Commit & Push changes
+        uses: actions-js/push@a52398fac807b0c1e5f1492c969b477c8560a0ba # tag=v1.3
+        with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+           message: "chore: updated metrics"
+           branch: main     
