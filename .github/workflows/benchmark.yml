@@ -26,7 +26,7 @@ jobs:
       - name: Install pnpm
         run: |
           corepack enable
-          corepack prepare --activate pnpm
+          corepack prepare --activate pnpm@latest
       - name: set store
         run: | 
           mkdir ~/.pnpm-store
@@ -80,7 +80,7 @@ jobs:
       - name: Install pnpm
         run: |
           corepack enable
-          corepack prepare --activate pnpm
+          corepack prepare --activate pnpm@latest
       - uses: actions/cache@9b0c1fce7a93df8e3bb8926b0d6e9d89e92f20a7 # tag=v3
         with:
           path: ~/.pnpm-store
@@ -142,7 +142,7 @@ jobs:
       - name: Install pnpm
         run: |
           corepack enable
-          corepack prepare --activate pnpm
+          corepack prepare --activate pnpm@latest
       - uses: actions/cache@9b0c1fce7a93df8e3bb8926b0d6e9d89e92f20a7 # tag=v3
         with:
           path: ~/.pnpm-store
