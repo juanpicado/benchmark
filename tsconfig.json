@@ -2,27 +2,30 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
+    "module": "CommonJS",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "strict": true,
     "declaration": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "strictNullChecks": true,
-    "types": ["node", "jest", "express"],
     "resolveJsonModule": true,
-    // "preserveSymlinks": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "isolatedModules": true
   },
-  "include": ["src/**/*.ts", "types/*.d.ts"],
+  "include": [
+    "cli/**/*.ts",
+    "types/*.d.ts",
+    "next-env.d.ts", "**/*.ts", "**/*.tsx"
+  ],
   "exclude": [
-    "**/build",
-    "node_modules",
-    "**/node_modules",
-    "**/coverage",
-    "**/*.spec.ts",
-    "**/test",
-    "**/__tests__",
-    "**/*.test.ts"
+    "node_modules"
   ]
 }
