@@ -27,9 +27,9 @@ export default async function run(
     debug("dry run", dryRun);
     const result = await autocannon({
       url: url ?? getURL(benchmark),
-      connections: 10,
+      connections: 100,
       pipelining: 1,
-      duration: 10,
+      duration: 60,
     });
     const wrapResults = {
       results: [result],
