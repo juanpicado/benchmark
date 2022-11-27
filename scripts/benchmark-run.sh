@@ -6,15 +6,15 @@ FIXTURE=$1
 
 case $FIXTURE in 
   info)
-    FIXTURE='npm info jquery'
+    FIXTURE='curl http://localhost:4873/jquery'
     ;;
   tarball)
-    FIXTURE='npm install jquery'
+    FIXTURE='curl http://localhost:4873/jquery/-/jquery-3.6.0.tgz'
     ;;
   *)
     echo "no command found"  
     return 1;;
 esac
 
-hyperfine --ignore-failure --warmup 1 --min-runs=10 --show-output --export-json './hyper-results.json' "$FIXTURE"
+hyperfine --ignore-failure --warmup 1 --min-runs=1000 --show-output --export-json './hyper-results.json' "$FIXTURE"
 
