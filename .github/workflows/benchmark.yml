@@ -74,7 +74,7 @@ jobs:
       - name: start registry
         run: ./scripts/benchmark-prepare.sh ${{matrix.verdaccioVersion}}    
       - name: benchmark        
-        run: pnpm benchmark:api -v ${{matrix.verdaccioVersion}} -f ${{matrix.benchmark}}       
+        run: pnpm benchmark:api -v ${{matrix.verdaccioVersion}} -f ${{matrix.benchmark}} -c ${{env.B_CONNECTIONS}}   
         shell: bash
         env:
           DEBUG: metrics*

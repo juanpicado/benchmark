@@ -19,13 +19,14 @@ importers:
       semver: 7.3.8
       temp-dir: 2.0.0
       ts-node: 10.9.1
+      typanion: 3.12.1
       typescript: 4.9.3
     devDependencies:
       '@types/node': 18.11.9
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       autocannon: 7.10.0
-      clipanion: 3.1.0
+      clipanion: 3.1.0_typanion@3.12.1
       debug: 4.3.4
       get-port: 5.1.1
       glob: 8.0.3
@@ -36,6 +37,7 @@ importers:
       semver: 7.3.8
       temp-dir: 2.0.0
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
+      typanion: 3.12.1
       typescript: 4.9.3
 
   packages/benchmark:
@@ -373,6 +375,15 @@ packages:
     resolution: {integrity: sha512-v025Hz+IDQ15FpOyK8p02h5bFznMu6rLFsJSyOPR+7WrbSnZ1Ek6pblPukV7K5tC/dsWfncQPIrJ4iUy2PXkbw==}
     dependencies:
       typanion: 3.12.1
+    dev: false
+
+  /clipanion/3.1.0_typanion@3.12.1:
+    resolution: {integrity: sha512-v025Hz+IDQ15FpOyK8p02h5bFznMu6rLFsJSyOPR+7WrbSnZ1Ek6pblPukV7K5tC/dsWfncQPIrJ4iUy2PXkbw==}
+    peerDependencies:
+      typanion: '*'
+    dependencies:
+      typanion: 3.12.1
+    dev: true
 
   /color-convert/2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}

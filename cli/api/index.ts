@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { Command, Option } from "clipanion";
+import * as t from 'typanion';
 
 import runApi from "./run";
 
@@ -16,6 +17,12 @@ export class ApiCommand extends Command {
     required: false,
   });
 
+  private connections = Option.String("-c", {
+    description: "connections to execute",
+    validator: t.isNumber(),
+    required: false,
+  });  
+
   private version = Option.String("-v", {
     description: "version is running",
     required: true,
@@ -28,7 +35,7 @@ export class ApiCommand extends Command {
 
   public async execute() {
     try {
-      await runApi(this.benchmark, this.version, this.url, this.dryRun);
+      await runApi(this.benchmark, this.version, this.url, this.dryRun, this.connections);
     } catch (err: any) {
       console.error(err);
       process.exit(1);

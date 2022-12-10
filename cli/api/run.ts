@@ -19,7 +19,8 @@ export default async function run(
   benchmark,
   version,
   url?: string,
-  dryRun?: boolean
+  dryRun?: boolean,
+  connections?: number,
 ) {
   try {
     debug("api report start");
@@ -27,7 +28,7 @@ export default async function run(
     debug("dry run", dryRun);
     const result = await autocannon({
       url: url ?? getURL(benchmark),
-      connections: 100,
+      connections: connections ?? 100,
       pipelining: 1,
       duration: 60,
     });
