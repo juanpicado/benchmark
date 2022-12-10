@@ -16,5 +16,5 @@ case $FIXTURE in
     return 1;;
 esac
 
-hyperfine --ignore-failure --warmup 1 --min-runs=1000 --show-output --export-json './hyper-results.json' "$FIXTURE"
+hyperfine --ignore-failure --warmup 1 --min-runs=${B_CONNECTIONS} --show-output --export-json './hyper-results.json' "$FIXTURE"
 
