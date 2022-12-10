@@ -71,6 +71,10 @@ jobs:
           key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}   
       - name: install dependencies
         run: pnpm install    
+      - uses: cardinalby/export-env-action@v1
+        with:
+          envFile: 'constants.env'    
+          expand: 'true'            
       - name: start registry
         run: ./scripts/benchmark-prepare.sh ${{matrix.verdaccioVersion}}    
       - name: benchmark        
