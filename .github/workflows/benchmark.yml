@@ -3,9 +3,9 @@ name: ci - benchmark
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   # every 8 hours
-  #   - cron: '0 */8 * * *'
+  schedule:
+    # every 8 hours
+    - cron: '0 */8 * * *'
   push:
   #   branches:
   #     - dev
