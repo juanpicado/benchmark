@@ -44,7 +44,7 @@ jobs:
   benchmark-auto:
     needs: prepare
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         benchmark:
           - info
@@ -91,7 +91,7 @@ jobs:
   benchmark-hyper:
     needs: prepare
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         benchmark:
           - info
