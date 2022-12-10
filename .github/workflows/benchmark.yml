@@ -72,7 +72,7 @@ jobs:
       - name: install dependencies
         run: pnpm install    
       - name: start registry
-        run: ./scripts/benchmark-prepare.sh ${{matrix.verdaccioVersion}}        
+        run: ./scripts/benchmark-prepare.sh ${{matrix.verdaccioVersion}}    
       - name: benchmark        
         run: pnpm benchmark:api -v ${{matrix.verdaccioVersion}} -f ${{matrix.benchmark}}       
         shell: bash
@@ -117,14 +117,18 @@ jobs:
           key: pnpm-${{ hashFiles('pnpm-lock.yaml') }}   
       - name: install dependencies
         run: pnpm install
+      - uses: cardinalby/export-env-action@v1
+        with:
+          envFile: 'constants.env'    
+          expand: 'true'          
       - name: install hyperfine
         run: |
           wget https://github.com/sharkdp/hyperfine/releases/download/v1.15.0/hyperfine_1.15.0_amd64.deb
           sudo dpkg -i hyperfine_1.15.0_amd64.deb
       - name: start registry
-        run: ./scripts/benchmark-prepare.sh ${{matrix.verdaccioVersion}}
+        run: ./scripts/benchmark-prepare.sh ${{matrix.verdaccioVersion}} ${{env.B_CONNECTIONS}}
       - name: benchmark
-        run: ./scripts/benchmark-run.sh ${{matrix.benchmark}}
+        run: ./scripts/benchmark-run.sh ${{matrix.benchmark}} ${{env.B_CONNECTIONS}}
         # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#using-a-specific-shell
         shell: bash
       - name: rename
