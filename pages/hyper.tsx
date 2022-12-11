@@ -5,7 +5,7 @@ import Link from "next/link";
 import data from "../output/hyper.data.json";
 import randomColor from "randomcolor";
 import dayjs from "dayjs";
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   return {
     props: {
       data,

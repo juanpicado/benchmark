@@ -19,10 +19,7 @@ export default function Home() {
             </li>
             <li>
               <Link href="/hyper">Hyperfine</Link>
-            </li>
-            <li>
-              <Link href="/autocannon">Autocannon</Link>
-            </li>
+            </li>          
           </ul>
         </div>
       </main>
