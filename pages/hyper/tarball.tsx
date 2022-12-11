@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Area from "../../components/Area";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/global.module.css";
 import Link from "next/link";
 import dataInfo from "../../output/hyper.info.data.json";
 import dataTarball from "../../output/hyper.tarball.data.json";

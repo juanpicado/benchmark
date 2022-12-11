@@ -1,13 +1,18 @@
-import {useState} from 'react';
+import { useState } from "react";
 import Head from "next/head";
 import Area from "../../components/Area";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/global.module.css";
 
 import Link from "next/link";
 import dataInfo from "../../output/hyper.info.data.json";
 import dataTarball from "../../output/hyper.tarball.data.json";
 import dayjs from "dayjs";
-import DatePicker from 'react-date-picker/dist/entry.nostyle';
+
+import TextField from "@mui/material/TextField";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+
 import { colors } from "../../lib/colors";
 export async function getStaticProps() {
   return {
@@ -50,8 +55,6 @@ function getData(jsonData, metric, options) {
       const g = dayjs(Number(i)).format("YYYY-MM-DD");
       return g;
     });
-  console.log("datasets", datasets);
-  console.log("labels", a);
   return {
     labels: a,
     datasets,
@@ -59,7 +62,8 @@ function getData(jsonData, metric, options) {
 }
 
 export default function Hyper({ dataInfo, dataTarball }) {
-  const [value, onChange] = useState(new Date());
+  const [from, setFrom] = useState();
+  const [to, setTo] = useState();
   return (
     <div className={styles.container}>
       <Head>
@@ -70,9 +74,26 @@ export default function Hyper({ dataInfo, dataTarball }) {
 
       <main>
         <div>
-          <Link href="/">Home</Link>
+          <Link href="/">Back</Link>
         </div>
-        <DatePicker onChange={onChange} value={value} />
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            label="From"
+            value={from}
+            onChange={(newValue) => {
+              console.log('n', newValue)
+            }}
+            renderInput={(params) => <TextField {...params} />}
+          />
+          <DatePicker
+            label="To"
+            value={to}
+            onChange={(newValue) => {
+              console.log('n', newValue)
+            }}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
         <h1>Metadata</h1>
         <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>
           <div style={{ width: "100%" }}>
