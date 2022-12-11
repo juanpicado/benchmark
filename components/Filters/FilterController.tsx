@@ -13,6 +13,10 @@ import Divider from "@mui/material/Divider";
 
 export function FilterController() {
   const { from, to, versionsSelected, versions } = useFilterProvider();
+  const handleCheck = item => (event: React.SyntheticEvent) => {
+    // @ts-ignore
+    console.log(event.target.checked, item);
+  }
 
   return (
     <Box
@@ -60,7 +64,7 @@ export function FilterController() {
                       control={<Switch defaultChecked />}
                       key={item}
                       label={item}
-                      onChange={(i)=> console.log(i.target.checked, item)}
+                      onChange={handleCheck(item)}
                     />
                   );
                 })
