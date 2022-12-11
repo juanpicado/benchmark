@@ -6,9 +6,6 @@ on:
   schedule:
     # every 8 hours
     - cron: '0 */8 * * *'
-  push:
-    branches:
-      - main
 
 permissions:
   contents: write
