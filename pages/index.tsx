@@ -18,7 +18,10 @@ export default function Home() {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/hyper">Hyperfine</Link>
+              <Link href="/hyper/info">Hyperfine Metadata</Link>
+            </li>          
+            <li>
+              <Link href="/hyper/tarball">Hyperfine Tarball</Link>
             </li>          
           </ul>
         </div>

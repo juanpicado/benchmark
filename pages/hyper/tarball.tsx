@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Area from "../components/Area";
-import styles from "../styles/Home.module.css";
+import Area from "../../components/Area";
+import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-import dataInfo from "../output/hyper.info.data.json";
-import dataTarball from "../output/hyper.tarball.data.json";
+import dataInfo from "../../output/hyper.info.data.json";
+import dataTarball from "../../output/hyper.tarball.data.json";
 import randomColor from "randomcolor";
 import dayjs from "dayjs";
 export async function getStaticProps() {
@@ -58,21 +58,6 @@ export default function Hyper({ dataInfo, dataTarball }) {
       <main>
         <div>
           <Link href="/">Home</Link>
-        </div>
-        <h1>Metadata</h1>
-        <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>
-          <div className="basis-1/2">
-            <Area type="mean" data={getData(dataInfo, "mean")} />
-          </div>
-          <div className="basis-1/2">
-            <Area type="median" data={getData(dataInfo, "median")} />
-          </div>
-          <div className="basis-1/2">
-            <Area type="min" data={getData(dataInfo, "min")} />
-          </div>
-          <div className="basis-1/2">
-            <Area type="max" data={getData(dataInfo, "max")} />
-          </div>
         </div>
         <h1>Tarball</h1>
         <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>

@@ -1,5 +1,6 @@
 import glob from "glob";
 import path from "path";
+import semver from 'semver';
 import fs from "fs";
 
 function porcessHyper(err, files) {
@@ -7,16 +8,18 @@ function porcessHyper(err, files) {
   let typeFile = '';
   files.forEach((item) => {
     console.log("processing...", item);
-    const [, , date, , version] = item.split("/");
+    const [, , date, , version] = item.split("/");    
     const [, , numberVersion, ...rest] = version.split("-");
+    console.log('version', numberVersion, '-->', semver.coerce(numberVersion));
+    const major = semver.coerce(numberVersion).major;
     const [type] = rest[rest.length - 1].split(".");
     typeFile = type;
     const data = require(path.join(__dirname, "../", item)).results[0];
-    if (!final[numberVersion]) {
-      final[numberVersion] = [];
+    if (!final[major]) {
+      final[major] = [];
     }
     const { mean, median, min, max } = data;
-    final[numberVersion].push({
+    final[major].push({
       timestamp: new Date(date).getTime(),
       mean,
       median,
