@@ -1,13 +1,30 @@
 import glob from "glob";
 import path from "path";
-console.log(path.join(__dirname, "..", "benckmark", "**/*.json"));
+import fs from "fs";
 
 ["hyperfine" /*"autocannon"*/].forEach((item) => {
-  glob(`./benchmark/**/${item}/*.json`, {}, function (er, files) {
-    // files is an array of filenames.
-    // If the `nonull` option is set, and nothing
-    // was found, then files is ["**/*.js"]
-    // er is an error object or null.
-    console.log("files", item, files);
+  glob(`./benchmark/**/${item}/*info.json`, {}, function (err, files) {
+    const final = {};
+    files.forEach((item) => {
+      console.log('processing...', item)
+      const [, , date, , version] = item.split("/");
+      const [, , numberVersion, ...rest] = version.split("-");
+      const data = require(path.join(__dirname, "../", item)).results[0];
+      if (!final[numberVersion]) {
+        final[numberVersion] = [];
+      }
+      const { mean, median, min, max } = data;
+      final[numberVersion].push({
+        timestamp: new Date(date).getTime(),
+        mean,
+        median,
+        min,
+        max,
+      });
+    });
+    fs.writeFileSync(
+      path.join(__dirname, `../output/hyper.data.json`),
+      JSON.stringify(final, null, 3)
+    );
   });
 });
