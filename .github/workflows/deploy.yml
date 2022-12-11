@@ -1,0 +1,35 @@
+---
+name: deploy
+
+on:
+  workflow_dispatch:
+  schedule:
+    # every 8 hours
+    - cron: '0 */8 * * *'
+    
+permissions:
+  contents: write
+
+jobs:  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install pnpm
+        run: |
+          corepack enable
+          corepack prepare --activate pnpm@latest
+      - name: install dependencies
+        run: pnpm install          
+      - name: build website
+        run: pnpm build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out

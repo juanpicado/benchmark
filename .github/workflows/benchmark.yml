@@ -182,9 +182,3 @@ jobs:
            github_token: ${{ secrets.GITHUB_TOKEN }}
            message: "chore: updated metrics"
            branch: main
-      - name: build website
-        run: pnpm build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: out
