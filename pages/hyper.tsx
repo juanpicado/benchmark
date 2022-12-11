@@ -2,13 +2,15 @@ import Head from "next/head";
 import Area from "../components/Area";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import data from "../output/hyper.data.json";
+import dataInfo from "../output/hyper.info.data.json";
+import dataTarball from "../output/hyper.tarball.data.json";
 import randomColor from "randomcolor";
 import dayjs from "dayjs";
 export async function getStaticProps() {
   return {
     props: {
-      data,
+      dataInfo,
+      dataTarball
     },
   };
 }
@@ -44,7 +46,7 @@ function getData(jsonData, metric) {
   };
 }
 
-export default function Hyper({ data }) {
+export default function Hyper({ dataInfo, dataTarball }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -57,18 +59,34 @@ export default function Hyper({ data }) {
         <div>
           <Link href="/">Home</Link>
         </div>
+        <h1>Metadata</h1>
         <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>
           <div className="basis-1/2">
-            <Area type="mean" data={getData(data, "mean")} />
+            <Area type="mean" data={getData(dataInfo, "mean")} />
           </div>
           <div className="basis-1/2">
-            <Area type="median" data={getData(data, "median")} />
+            <Area type="median" data={getData(dataInfo, "median")} />
           </div>
           <div className="basis-1/2">
-            <Area type="min" data={getData(data, "min")} />
+            <Area type="min" data={getData(dataInfo, "min")} />
           </div>
           <div className="basis-1/2">
-            <Area type="max" data={getData(data, "max")} />
+            <Area type="max" data={getData(dataInfo, "max")} />
+          </div>
+        </div>
+        <h1>Tarball</h1>
+        <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>
+          <div className="basis-1/2">
+            <Area type="mean" data={getData(dataTarball, "mean")} />
+          </div>
+          <div className="basis-1/2">
+            <Area type="median" data={getData(dataTarball, "median")} />
+          </div>
+          <div className="basis-1/2">
+            <Area type="min" data={getData(dataTarball, "min")} />
+          </div>
+          <div className="basis-1/2">
+            <Area type="max" data={getData(dataTarball, "max")} />
           </div>
         </div>
       </main>

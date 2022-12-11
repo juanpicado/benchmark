@@ -8,6 +8,7 @@
     "benchmark:hyper": "ts-node cli/index.ts hyper -r ./hyper-results.json",
     "benchmark:api": "ts-node cli/index.ts api",
     "generate": "ts-node ./scripts/generate.ts",
+    "export": "ts-node ./scripts/export.ts",
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
