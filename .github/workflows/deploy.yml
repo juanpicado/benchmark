@@ -4,8 +4,8 @@ name: deploy
 on:
   workflow_dispatch:
   schedule:
-    # once peer day
-    - cron: '0 0 * * *'
+    # deploy at 00:20
+    - cron: '30 0 * * *'
 
 permissions:
   contents: write
