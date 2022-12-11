@@ -1,5 +1,7 @@
 import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
 import createEmotionServer from "@emotion/server/create-instance";
 import theme, { roboto } from "../components/UI/theme";
 import createEmotionCache from "../components/UI/createEmotionCache";
@@ -16,8 +18,11 @@ export default class MyDocument extends Document {
           {(this.props as any).emotionStyleTags}
         </Head>
         <body>
-          <Main />
-          <NextScript />
+          <CssBaseline />
+          <Container fixed>
+            <Main />
+            <NextScript />
+          </Container>
         </body>
       </Html>
     );

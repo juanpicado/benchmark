@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Area from "../../components/Area";
-import styles from "../../styles/global.module.css";
 import Link from "next/link";
 import dataInfo from "../../output/hyper.info.data.json";
 import dataTarball from "../../output/hyper.tarball.data.json";
@@ -48,7 +47,7 @@ function getData(jsonData, metric) {
 
 export default function Hyper({ dataInfo, dataTarball }) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Verdaccio benchmark with hyperfine</title>
         <meta name="description" content="Verdaccio benchmark with hyperfine" />

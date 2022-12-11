@@ -30,11 +30,11 @@ exportFile.Items.forEach((item) => {
         {
           results: [
             {
-              command: metrics?.command?.S,
-              mean: metrics?.mean?.N,
-              median: metrics?.median?.N,
-              max: metrics?.max?.N,
-              min: metrics?.min?.N,
+              command: Number(metrics?.command?.S),
+              mean: Number(metrics?.mean?.N),
+              median: Number(metrics?.median?.N),
+              max: Number(metrics?.max?.N),
+              min: Number(metrics?.min?.N),
             },
           ],
         },
