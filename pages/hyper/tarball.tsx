@@ -61,16 +61,16 @@ export default function Hyper({ dataInfo, dataTarball }) {
         <h1>Tarball</h1>
         <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>
           <div className="basis-1/2">
-            <Area type="mean" data={getData(dataTarball, "mean")} />
+            <Area type="mean" data={getData(dataTarball.data, "mean")} />
           </div>
           <div className="basis-1/2">
-            <Area type="median" data={getData(dataTarball, "median")} />
+            <Area type="median" data={getData(dataTarball.data, "median")} />
           </div>
           <div className="basis-1/2">
-            <Area type="min" data={getData(dataTarball, "min")} />
+            <Area type="min" data={getData(dataTarball.data, "min")} />
           </div>
           <div className="basis-1/2">
-            <Area type="max" data={getData(dataTarball, "max")} />
+            <Area type="max" data={getData(dataTarball.data, "max")} />
           </div>
         </div>
       </main>
