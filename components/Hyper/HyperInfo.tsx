@@ -1,29 +1,26 @@
 import Area from "../../components/Area";
+
 import { useFilterProvider } from "../../components/Filters";
 
 import dayjs from "dayjs";
+import { sortBy, cloneDeep } from "lodash";
 
 import { colors } from "../../lib/colors";
 
 const isBetween = require("dayjs/plugin/isBetween");
 dayjs.extend(isBetween);
 
-function getData(jsonData, metric, { from, to }) {
+function getData(jsonData, metric) {
   const labels = {};
   const datasets = Object.keys(jsonData).reduce((acc: any, item: any) => {
     if (!acc[item]) {
-      const data = jsonData[item]
-        .map((jsonItem) => {
-          labels[jsonItem.timestamp] = {};
-
-          if (jsonItem.timestamp >= from && jsonItem.timestamp <= to) {
-            return {
-              x: dayjs(Number(jsonItem.timestamp)).format("YYYY-MM-DD"),
-              y: jsonItem[metric],
-            };
-          }
-        })
-        .filter((i) => typeof i !== "undefined");
+      const data = jsonData[item].map((jsonItem) => {
+        labels[jsonItem.timestamp] = {};
+        return {
+          x: jsonItem.timestamp,
+          y: jsonItem[metric],
+        };
+      });
       acc.push({
         label: item,
         borderColor: colors[item],
@@ -31,51 +28,52 @@ function getData(jsonData, metric, { from, to }) {
         borderWidth: 0.8,
         cubicInterpolationMode: "monotone",
         tension: 10,
-        data,
+        data: sortBy(data, ["x"]),
         spanGaps: true,
       });
     }
     return acc;
   }, []);
 
-  const a = Object.keys(labels)
-    .sort()
-    .map((i) => {
-      if (i >= from && i <= to) {
-        const g = dayjs(Number(i)).format("YYYY-MM-DD");
-        return g;
-      }
-    })
-    .filter((i) => typeof i !== "undefined");
+  const a = Object.keys(labels).sort();
   return {
     labels: a,
     datasets,
   };
 }
 
+function filter(info, filters) {
+  const data = cloneDeep(info);
+  const { from, to } = filters;
+  const keys = Object.keys(data.data);
+  keys.forEach((i) => {
+    data.data[i] = data.data[i].filter((i) => {
+      const c = i.timestamp >= from && i.timestamp <= to;
+      return c;
+    });
+  });
+
+  return data;
+}
+
 export function HyperInfo({ dataInfo }) {
   const { from, to } = useFilterProvider();
+  const data = filter(dataInfo, { from, to });
   return (
     <div>
       <h1>Metadata</h1>
       <div className="flex flex-row flex-wrap" style={{ width: "100%" }}>
         <div style={{ width: "100%" }}>
-          <Area
-            type="mean"
-            data={getData(dataInfo.data, "mean", { from, to })}
-          />
+          <Area type="mean" data={getData(data.data, "mean")} />
         </div>
         <div style={{ width: "100%" }}>
-          <Area
-            type="median"
-            data={getData(dataInfo.data, "median", { from, to })}
-          />
+          <Area type="median" data={getData(data.data, "median")} />
         </div>
         <div style={{ width: "100%" }}>
-          <Area type="min" data={getData(dataInfo.data, "min", { from, to })} />
+          <Area type="min" data={getData(data.data, "min")} />
         </div>
         <div style={{ width: "100%" }}>
-          <Area type="max" data={getData(dataInfo.data, "max", { from, to })} />
+          <Area type="max" data={getData(data.data, "max")} />
         </div>
       </div>
     </div>

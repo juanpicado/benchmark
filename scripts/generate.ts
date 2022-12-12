@@ -35,7 +35,6 @@ function processFiles(err, files) {
         filters.minDate = dayjs(date).valueOf();
       }
       if(dayjs(date).isAfter(dayjs(filters.maxDate))) {
-        // console.log('->', dayjs(date).format(), 'is after', dayjs(filters.minDate).format())
         filters.maxDate = dayjs(date).valueOf();
       }
     }
@@ -49,7 +48,7 @@ function processFiles(err, files) {
     });
   });
   // const keys = Object.keys(final);
-  filters.customRange = [dayjs(filters.maxDate).subtract(200, 'days').valueOf(), filters.maxDate]
+  filters.customRange = [dayjs(filters.maxDate).subtract(30, 'days').valueOf(), filters.maxDate]
   fs.writeFileSync(
     path.join(__dirname, `../output/hyper.${typeFile}.data.json`),
     JSON.stringify({data: final, filters}, null, 3)

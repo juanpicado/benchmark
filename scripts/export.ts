@@ -22,7 +22,7 @@ exportFile.Items.forEach((item) => {
       folderName,
       `hyper-results-${version}-${type}.json`
     );
-    console.log("-fileName", fileName);
+    console.log("process fileName...", fileName);
     const metrics = item.metrics.M;
     fs.writeFileSync(
       fileName,

@@ -41,8 +41,6 @@ function getOptions(metric) {
           display: true,
           text: metric
         },
-        suggestedMin: 1,
-        suggestedMax: 4
       }
     },
     plugins: {

@@ -12,7 +12,7 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 
 export function FilterController() {
-  const { from, to, versionsSelected, versions } = useFilterProvider();
+  const { from, to, versionsSelected, versions, setTo, setFrom } = useFilterProvider();
   const handleCheck = item => (event: React.SyntheticEvent) => {
     // @ts-ignore
     console.log(event.target.checked, item);
@@ -35,8 +35,8 @@ export function FilterController() {
             <DatePicker
               label="From"
               value={from}
-              onChange={(newValue) => {
-                console.log("n", newValue);
+              onChange={(newValue) => {                
+                setFrom(newValue.valueOf());
               }}
               renderInput={(params) => <TextField {...params} />}
             />
@@ -46,7 +46,7 @@ export function FilterController() {
               label="To"
               value={to}
               onChange={(newValue) => {
-                console.log("n", newValue);
+                setTo(newValue.valueOf());
               }}
               renderInput={(params) => <TextField {...params} />}
             />
