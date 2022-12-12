@@ -1,11 +1,16 @@
 {
     "results": [
         {
-            "command": null,
+            "command": "npm info jquery",
             "mean": 0.8643889608599998,
             "median": 0.8523524099600001,
             "max": 0.98152959746,
-            "min": 0.83442841146
+            "min": 0.83442841146,
+            "user": 0.428046635,
+            "stddev": 0.04255359358765505,
+            "system": 0.04746646499999999,
+            "commit": "9aa77d92c8d2ff66b48ee584b77d9d121eebeeb1",
+            "version": "3.13.1"
         }
     ]
 }

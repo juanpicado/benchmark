@@ -1,11 +1,16 @@
 {
     "results": [
         {
-            "command": null,
+            "command": "npm install jquery",
             "mean": 16.156693088835,
             "median": 15.359017299335,
             "max": 22.511271791835,
-            "min": 14.672901053835
+            "min": 14.672901053835,
+            "user": 15.43345726,
+            "stddev": 2.3593026588060715,
+            "system": 0.717367595,
+            "commit": "586f1b06845b2c43e0f308915ab0a3c2c68999c2",
+            "version": "3.13.1"
         }
     ]
 }
