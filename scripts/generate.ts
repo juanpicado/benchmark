@@ -49,7 +49,7 @@ function processFiles(err, files) {
     });
   });
   // const keys = Object.keys(final);
-  filters.customRange = [dayjs(filters.maxDate).subtract(180, 'days').valueOf(), filters.maxDate]
+  filters.customRange = [dayjs(filters.maxDate).subtract(200, 'days').valueOf(), filters.maxDate]
   fs.writeFileSync(
     path.join(__dirname, `../output/hyper.${typeFile}.data.json`),
     JSON.stringify({data: final, filters}, null, 3)
