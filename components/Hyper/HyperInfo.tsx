@@ -11,13 +11,13 @@ const isBetween = require("dayjs/plugin/isBetween");
 dayjs.extend(isBetween);
 
 function getData(jsonData, metric) {
-  const labels = {};
+  const labels: number[] = [];
   const datasets = Object.keys(jsonData).reduce((acc: any, item: any) => {
     if (!acc[item]) {
       const data = jsonData[item].map((jsonItem) => {
-        labels[jsonItem.timestamp] = {};
+        labels.push(Number(jsonItem.timestamp));
         return {
-          x: jsonItem.timestamp,
+          x: Number(jsonItem.timestamp),
           y: jsonItem[metric],
         };
       });
@@ -35,9 +35,9 @@ function getData(jsonData, metric) {
     return acc;
   }, []);
 
-  const a = Object.keys(labels).sort();
+  console.log('labels', labels);
   return {
-    labels: a,
+    labels: labels.sort(),
     datasets,
   };
 }
@@ -59,6 +59,7 @@ function filter(info, filters) {
 export function HyperInfo({ dataInfo }) {
   const { from, to } = useFilterProvider();
   const data = filter(dataInfo, { from, to });
+  console.log('data', data);
   return (
     <div>
       <h1>Metadata</h1>

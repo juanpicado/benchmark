@@ -3,6 +3,7 @@ import path from "path";
 import semver from "semver";
 import fs from "fs";
 import dayjs from "dayjs";
+import { sortedUniq } from "lodash";
 
 function processFiles(err, files) {
   const filters = {
@@ -17,6 +18,7 @@ function processFiles(err, files) {
   }
   const final = {};
   let typeFile = "";
+  const timestamps: number[] = [];
   files.forEach((item) => {
     console.log("processing...", item);
     const [, , date, , version] = item.split("/");
@@ -28,30 +30,25 @@ function processFiles(err, files) {
     if (!final[major]) {
       final[major] = [];
       filters.versions.push(major);
-      filters.minDate = dayjs(date).valueOf();
-      filters.maxDate = dayjs(date).valueOf();
-    } else {
-      if(dayjs(date).isBefore(dayjs(filters.minDate))) {
-        filters.minDate = dayjs(date).valueOf();
-      }
-      if(dayjs(date).isAfter(dayjs(filters.maxDate))) {
-        filters.maxDate = dayjs(date).valueOf();
-      }
     }
     const { mean, median, min, max } = data;
+    timestamps.push(Number(date));
     final[major].push({
-      timestamp: new Date(date).getTime(),
+      timestamp: Number(date),
       mean,
       median,
       min,
       max,
     });
   });
+  const dates = sortedUniq(timestamps);
   // const keys = Object.keys(final);
-  filters.customRange = [dayjs(filters.maxDate).subtract(30, 'days').valueOf(), filters.maxDate]
+  filters.minDate = dates[0];
+  filters.maxDate = dates[dates.length - 1];
+  filters.customRange = [dates[dates.length - 30], dates[dates.length - 1]];
   fs.writeFileSync(
     path.join(__dirname, `../output/hyper.${typeFile}.data.json`),
-    JSON.stringify({data: final, filters}, null, 3)
+    JSON.stringify({ data: final, filters }, null, 3)
   );
 }
 

@@ -10,7 +10,7 @@ const info = [];
 const tarball = [];
 
 exportFile.Items.forEach((item) => {
-  const date = dayjs(Number(item.date.N)).format("YYYY-MM-DD");
+  const date = item.date.N;
   const folderName = path.join(__dirname, "../benchmark", date, item.tool.S);
   const version = semver.satisfies(item.version.S, "<6.0.0")
     ? item.version.S

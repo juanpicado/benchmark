@@ -52,7 +52,7 @@ export function FilterController() {
             />
           </Grid>
           <Grid item xs={4}>
-            <div>xs=8</div>
+            <div></div>
           </Grid>
 
           <Grid item xs={8}>
