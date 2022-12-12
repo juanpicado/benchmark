@@ -22,6 +22,10 @@ function processFiles(err, files) {
   files.forEach((item) => {
     console.log("processing...", item);
     const [, , date, , version] = item.split("/");
+    if(!date) {
+      throw Error('no date');
+    }
+
     const [, , numberVersion, ...rest] = version.split("-");
     const major = semver.coerce(numberVersion).major;
     const [type] = rest[rest.length - 1].split(".");
