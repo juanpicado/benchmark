@@ -46,7 +46,6 @@ function processFiles(err, files) {
     });
   });
   const dates = sortedUniq(timestamps);
-  // const keys = Object.keys(final);
   filters.minDate = dates[0];
   filters.maxDate = dates[dates.length - 1];
   filters.customRange = [dates[dates.length - 30], dates[dates.length - 1]];

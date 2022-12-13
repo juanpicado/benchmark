@@ -147,9 +147,12 @@ jobs:
     needs: [benchmark-hyper, benchmark-auto]
     runs-on: ubuntu-latest
     steps:
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+      - name: Get current time
+        uses: josStorer/get-current-time@v2.0.2
+        id: current-time
+        with:
+          format: YYYYMMDD-HH
+          utcOffset: "+08:00"        
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
@@ -169,8 +172,7 @@ jobs:
         run: pnpm install          
       - uses: actions/download-artifact@v3
         with:
-          # name: verdaccio-metrics
-          path: ./benchmark/${{ steps.date.outputs.date }}
+          path: ./benchmark/${{ steps.current-time.outputs.millisecond }}
       - name: generate metrics
         run: pnpm generate          
       - name: Commit & Push changes
