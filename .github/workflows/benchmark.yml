@@ -151,7 +151,7 @@ jobs:
         uses: josStorer/get-current-time@v2.0.2
         id: current-time
         with:
-          format: YYYYMMDD-HH
+          format: x
           utcOffset: "+08:00"        
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
         with:
@@ -172,7 +172,7 @@ jobs:
         run: pnpm install          
       - uses: actions/download-artifact@v3
         with:
-          path: ./benchmark/${{ steps.current-time.outputs.millisecond }}
+          path: ./benchmark/${{ steps.current-time.outputs.time }}
       - name: generate metrics
         run: pnpm generate          
       - name: Commit & Push changes
