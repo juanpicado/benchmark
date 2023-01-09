@@ -7,7 +7,7 @@ specifiers:
   '@emotion/styled': 11.10.5
   '@mui/icons-material': 5.11.0
   '@mui/material': 5.11.4
-  '@mui/x-date-pickers': 5.0.10
+  '@mui/x-date-pickers': 5.0.13
   '@next/font': 13.0.6
   '@types/lodash': ^4.14.191
   '@types/node': 18.11.9
@@ -43,7 +43,7 @@ devDependencies:
   '@emotion/styled': 11.10.5_otcjdfkheatawhug6fwk7ldzni
   '@mui/icons-material': 5.11.0_redxmru6moqqkpexall3enuotm
   '@mui/material': 5.11.4_thp4wrxo45nyllusrnt46mid4u
-  '@mui/x-date-pickers': 5.0.10_m7cc2smtbmdzig2omnko2hxfke
+  '@mui/x-date-pickers': 5.0.13_m7cc2smtbmdzig2omnko2hxfke
   '@next/font': 13.0.6
   '@types/lodash': 4.14.191
   '@types/node': 18.11.9
@@ -527,20 +527,6 @@ packages:
       '@types/react': 18.0.25
     dev: true
 
-  /@mui/utils/5.10.16_react@18.2.0:
-    resolution: {integrity: sha512-3MB/SGsgiiu9Z55CFmAfiONUoR7AAue/H4F6w3mc2LnhFQCsoVvXhioDPcsiRpUMIQr34jDPzGXdCuqWooPCXQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@babel/runtime': 7.20.7
-      '@types/prop-types': 15.7.5
-      '@types/react-is': 17.0.3
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-is: 18.2.0
-    dev: true
-
   /@mui/utils/5.11.2_react@18.2.0:
     resolution: {integrity: sha512-AyizuHHlGdAtH5hOOXBW3kriuIwUIKUIgg0P7LzMvzf6jPhoQbENYqY6zJqfoZ7fAWMNNYT8mgN5EftNGzwE2w==}
     engines: {node: '>=12.0.0'}
@@ -555,8 +541,8 @@ packages:
       react-is: 18.2.0
     dev: true
 
-  /@mui/x-date-pickers/5.0.10_m7cc2smtbmdzig2omnko2hxfke:
-    resolution: {integrity: sha512-k+SKBqlpYsY49JVs7PORDvnfoXw9nJELfImR/3jTgHqP8hQQ6loFjB9ZFvc5NjV4Jf2NIJFmdcp6g8cO31Wmbg==}
+  /@mui/x-date-pickers/5.0.13_m7cc2smtbmdzig2omnko2hxfke:
+    resolution: {integrity: sha512-nUc35Zvah/l4bEWcPNRtSvWBL+7uAlokd6G6PzQfLe2TQo4GNlK1JVRfoVpBY5FsdM09uWLrpvfWLbka87k7GA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       '@emotion/react': ^11.9.0
@@ -583,7 +569,7 @@ packages:
       moment:
         optional: true
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.20.7
       '@date-io/core': 2.16.0
       '@date-io/date-fns': 2.16.0
       '@date-io/dayjs': 2.16.0_dayjs@1.11.7
@@ -592,7 +578,7 @@ packages:
       '@emotion/react': 11.10.5_fan5qbzahqtxlm5dzefqlqx5ia
       '@emotion/styled': 11.10.5_otcjdfkheatawhug6fwk7ldzni
       '@mui/material': 5.11.4_thp4wrxo45nyllusrnt46mid4u
-      '@mui/utils': 5.10.16_react@18.2.0
+      '@mui/utils': 5.11.2_react@18.2.0
       '@types/react-transition-group': 4.4.5
       clsx: 1.2.1
       dayjs: 1.11.7
