@@ -26,7 +26,7 @@ specifiers:
   postcss: ^8.4.19
   randomcolor: ^0.6.2
   react: 18.2.0
-  react-chartjs-2: 5.0.1
+  react-chartjs-2: 5.2.0
   react-date-picker: ^9.1.0
   react-dom: 18.2.0
   semver: 7.3.8
@@ -62,7 +62,7 @@ devDependencies:
   postcss: 8.4.19
   randomcolor: 0.6.2
   react: 18.2.0
-  react-chartjs-2: 5.0.1_mdhqntb7qznawtkbfweh7f2mzm
+  react-chartjs-2: 5.2.0_mdhqntb7qznawtkbfweh7f2mzm
   react-date-picker: 9.1.0_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   semver: 7.3.8
@@ -1833,10 +1833,10 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /react-chartjs-2/5.0.1_mdhqntb7qznawtkbfweh7f2mzm:
-    resolution: {integrity: sha512-u38C9OxynlNCBp+79grgXRs7DSJ9w8FuQ5/HO5FbYBbri8HSZW+9SWgjVshLkbXBfXnMGWakbHEtvN0nL2UG7Q==}
+  /react-chartjs-2/5.2.0_mdhqntb7qznawtkbfweh7f2mzm:
+    resolution: {integrity: sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==}
     peerDependencies:
-      chart.js: ^4.0.0
+      chart.js: ^4.1.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       chart.js: 4.0.1
