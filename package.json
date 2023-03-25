@@ -24,7 +24,7 @@
     "@mui/x-date-pickers": "5.0.10",
     "@next/font": "13.0.6",
     "@types/lodash": "^4.14.191",
-    "@types/node": "18.11.9",
+    "@types/node": "18.15.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "autocannon": "7.10.0",
