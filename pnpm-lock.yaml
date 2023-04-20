@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^4.14.191
     version: 4.14.191
   '@types/node':
-    specifier: 18.15.9
-    version: 18.15.9
+    specifier: 18.15.12
+    version: 18.15.12
   '@types/react':
     specifier: 18.0.29
     version: 18.0.29
@@ -96,7 +96,7 @@ devDependencies:
     version: 2.0.0
   ts-node:
     specifier: 10.9.1
-    version: 10.9.1(@types/node@18.15.9)(typescript@4.9.3)
+    version: 10.9.1(@types/node@18.15.12)(typescript@4.9.3)
   typanion:
     specifier: 3.12.1
     version: 3.12.1
@@ -111,7 +111,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.9
+      '@jridgewell/trace-mapping': 0.3.18
     dev: true
 
   /@assemblyscript/loader@0.19.23:
@@ -1024,8 +1024,8 @@ packages:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
-  /@types/node@18.15.9:
-    resolution: {integrity: sha512-dUxhiNzBLr6IqlZXz6e/rN2YQXlFgOei/Dxy+e3cyXTJ4txSUbGT2/fmnD6zd/75jDMeW5bDee+YXxlFKHoV0A==}
+  /@types/node@18.15.12:
+    resolution: {integrity: sha512-Wha1UwsB3CYdqUm2PPzh/1gujGCNtWVUYF0mB00fJFoR4gTyWTDPjSm+zBF787Ahw8vSGgBja90MkgFwvB86Dg==}
     dev: true
 
   /@types/parse-json@4.0.0:
@@ -2017,7 +2017,7 @@ packages:
     dependencies:
       lilconfig: 2.0.6
       postcss: 8.4.19
-      ts-node: 10.9.1(@types/node@18.15.9)(typescript@4.9.3)
+      ts-node: 10.9.1(@types/node@18.15.12)(typescript@4.9.3)
       yaml: 1.10.2
     dev: true
 
@@ -2447,7 +2447,7 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /ts-node@10.9.1(@types/node@18.15.9)(typescript@4.9.3):
+  /ts-node@10.9.1(@types/node@18.15.12)(typescript@4.9.3):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -2466,7 +2466,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.15.9
+      '@types/node': 18.15.12
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
