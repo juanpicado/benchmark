@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^3.2.4
     version: 3.2.4(postcss@8.4.19)(ts-node@10.9.1)
   temp-dir:
-    specifier: 2.0.0
-    version: 2.0.0
+    specifier: 3.0.0
+    version: 3.0.0
   ts-node:
     specifier: 10.9.1
     version: 10.9.1(@types/node@18.15.12)(typescript@4.9.3)
@@ -2223,9 +2223,9 @@ packages:
       - ts-node
     dev: true
 
-  /temp-dir@2.0.0:
-    resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
-    engines: {node: '>=8'}
+  /temp-dir@3.0.0:
+    resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
+    engines: {node: '>=14.16'}
     dev: true
 
   /through2@0.4.2:
