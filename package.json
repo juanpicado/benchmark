@@ -30,7 +30,7 @@
     "autocannon": "7.10.0",
     "autoprefixer": "^10.4.13",
     "chart.js": "4.0.1",
-    "clipanion": "3.2.0",
+    "clipanion": "3.2.1",
     "dayjs": "^1.11.7",
     "debug": "4.3.4",
     "get-port": "5.1.1",
