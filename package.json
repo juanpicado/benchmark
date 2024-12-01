@@ -29,7 +29,7 @@
     "@types/react-dom": "18.2.1",
     "autocannon": "7.10.0",
     "autoprefixer": "^10.4.13",
-    "chart.js": "4.0.1",
+    "chart.js": "4.4.7",
     "clipanion": "3.2.0",
     "dayjs": "^1.11.7",
     "debug": "4.3.4",

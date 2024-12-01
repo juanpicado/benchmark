@@ -25,7 +25,7 @@ devDependencies:
     version: 5.15.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
   '@mui/x-date-pickers':
     specifier: 6.2.0
-    version: 6.2.0(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@mui/base@5.0.0-beta.2)(@mui/material@5.15.2)(@mui/system@5.13.2)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0)
+    version: 6.2.0(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@mui/base@5.0.0-beta.29)(@mui/material@5.15.2)(@mui/system@5.15.2)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0)
   '@next/font':
     specifier: 13.4.6
     version: 13.4.6
@@ -48,8 +48,8 @@ devDependencies:
     specifier: ^10.4.13
     version: 10.4.13(postcss@8.4.19)
   chart.js:
-    specifier: 4.0.1
-    version: 4.0.1
+    specifier: 4.4.7
+    version: 4.4.7
   clipanion:
     specifier: 3.2.0
     version: 3.2.0(typanion@3.12.1)
@@ -82,7 +82,7 @@ devDependencies:
     version: 18.2.0
   react-chartjs-2:
     specifier: 5.2.0
-    version: 5.2.0(chart.js@4.0.1)(react@18.2.0)
+    version: 5.2.0(chart.js@4.4.7)(react@18.2.0)
   react-date-picker:
     specifier: ^9.1.0
     version: 9.1.0(react-dom@18.2.0)(react@18.2.0)
@@ -304,12 +304,6 @@ packages:
       '@emotion/memoize': 0.8.1
     dev: true
 
-  /@emotion/is-prop-valid@1.2.1:
-    resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
-    dependencies:
-      '@emotion/memoize': 0.8.1
-    dev: true
-
   /@emotion/memoize@0.8.0:
     resolution: {integrity: sha512-G/YwXTkv7Den9mXDO7AhLWkE3q+I92B+VqAE+dYG4NGPaHZGvt3G8Q0p9vmE+sq7rTGphUbAvmQ9YpbfMQGGlA==}
     dev: true
@@ -464,28 +458,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@mui/base@5.0.0-beta.2(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-R9R+aqrl1QhZJaO05rhvooqxOaf7SKpQ+EjW80sbP3ticTVmLmrn4YBLQS7/ML+WXdrkrPtqSmKFdSE5Ik3gBQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@emotion/is-prop-valid': 1.2.1
-      '@mui/types': 7.2.4(@types/react@18.2.0)
-      '@mui/utils': 5.13.1(react@18.2.0)
-      '@popperjs/core': 2.11.7
-      '@types/react': 18.2.0
-      clsx: 1.2.1
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-is: 18.2.0
+  /@kurkle/color@0.3.4:
+    resolution: {integrity: sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==}
     dev: true
 
   /@mui/base@5.0.0-beta.29(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0):
@@ -568,23 +542,6 @@ packages:
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
     dev: true
 
-  /@mui/private-theming@5.13.1(@types/react@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-HW4npLUD9BAkVppOUZHeO1FOKUJWAwbpy0VQoGe3McUYTlck1HezGHQCfBQ5S/Nszi7EViqiimECVl9xi+/WjQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@mui/utils': 5.13.1(react@18.2.0)
-      '@types/react': 18.2.0
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: true
-
   /@mui/private-theming@5.15.2(@types/react@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-KlXx5TH1Mw9omSY+Q6rz5TA/P71meSYaAOeopiW8s6o433+fnOxS17rZbmd1RnDZGCo+j24TfCavQuCMBAZnQA==}
     engines: {node: '>=12.0.0'}
@@ -598,28 +555,6 @@ packages:
       '@babel/runtime': 7.23.6
       '@mui/utils': 5.15.2(@types/react@18.2.0)(react@18.2.0)
       '@types/react': 18.2.0
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: true
-
-  /@mui/styled-engine@5.13.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react@18.2.0):
-    resolution: {integrity: sha512-VCYCU6xVtXOrIN8lcbuPmoG+u7FYuOERG++fpY74hPpEWkyFQG97F+/XfTQVYzlR2m7nPjnwVUgATcTCMEaMvw==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@emotion/react': ^11.4.1
-      '@emotion/styled': ^11.3.0
-      react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@emotion/react':
-        optional: true
-      '@emotion/styled':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@emotion/cache': 11.11.0
-      '@emotion/react': 11.10.6(@types/react@18.2.0)(react@18.2.0)
-      '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(@types/react@18.2.0)(react@18.2.0)
-      csstype: 3.1.2
       prop-types: 15.8.1
       react: 18.2.0
     dev: true
@@ -641,36 +576,6 @@ packages:
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.10.6(@types/react@18.2.0)(react@18.2.0)
       '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(@types/react@18.2.0)(react@18.2.0)
-      csstype: 3.1.2
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: true
-
-  /@mui/system@5.13.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-TPyWmRJPt0JPVxacZISI4o070xEJ7ftxpVtu6LWuYVOUOINlhoGOclam4iV8PDT3EMQEHuUrwU49po34UdWLlw==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      '@emotion/react': ^11.5.0
-      '@emotion/styled': ^11.3.0
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      '@emotion/react':
-        optional: true
-      '@emotion/styled':
-        optional: true
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@emotion/react': 11.10.6(@types/react@18.2.0)(react@18.2.0)
-      '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(@types/react@18.2.0)(react@18.2.0)
-      '@mui/private-theming': 5.13.1(@types/react@18.2.0)(react@18.2.0)
-      '@mui/styled-engine': 5.13.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(react@18.2.0)
-      '@mui/types': 7.2.4(@types/react@18.2.0)
-      '@mui/utils': 5.13.1(react@18.2.0)
-      '@types/react': 18.2.0
-      clsx: 1.2.1
       csstype: 3.1.2
       prop-types: 15.8.1
       react: 18.2.0
@@ -717,17 +622,6 @@ packages:
       '@types/react': 18.2.0
     dev: true
 
-  /@mui/types@7.2.4(@types/react@18.2.0):
-    resolution: {integrity: sha512-LBcwa8rN84bKF+f5sDyku42w1NTxaPgPyYKODsh01U1fVstTClbUoSA96oyRBnSNyEiAVjKm6Gwx9vjR+xyqHA==}
-    peerDependencies:
-      '@types/react': '*'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@types/react': 18.2.0
-    dev: true
-
   /@mui/utils@5.12.0(react@18.2.0):
     resolution: {integrity: sha512-RmQwgzF72p7Yr4+AAUO6j1v2uzt6wr7SWXn68KBsnfVpdOHyclCzH2lr/Xu6YOw9su4JRtdAIYfJFXsS6Cjkmw==}
     engines: {node: '>=12.0.0'}
@@ -737,20 +631,6 @@ packages:
       '@babel/runtime': 7.21.0
       '@types/prop-types': 15.7.5
       '@types/react-is': 17.0.3
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-is: 18.2.0
-    dev: true
-
-  /@mui/utils@5.13.1(react@18.2.0):
-    resolution: {integrity: sha512-6lXdWwmlUbEU2jUI8blw38Kt+3ly7xkmV9ljzY4Q20WhsJMWiNry9CX8M+TaP/HbtuyR8XKsdMgQW7h7MM3n3A==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@babel/runtime': 7.21.0
-      '@types/prop-types': 15.7.5
-      '@types/react-is': 18.2.0
       prop-types: 15.8.1
       react: 18.2.0
       react-is: 18.2.0
@@ -774,7 +654,7 @@ packages:
       react-is: 18.2.0
     dev: true
 
-  /@mui/x-date-pickers@6.2.0(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@mui/base@5.0.0-beta.2)(@mui/material@5.15.2)(@mui/system@5.13.2)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0):
+  /@mui/x-date-pickers@6.2.0(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@mui/base@5.0.0-beta.29)(@mui/material@5.15.2)(@mui/system@5.15.2)(dayjs@1.11.7)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-/u2X2VVQ67wS6yJNrL1upUUwSSevH1HIkMZeAo/tyTHc3Ek4WlS+kbCWByjL9PT+Z2Dmck8+xSfXIe/F1rypng==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -822,9 +702,9 @@ packages:
       '@date-io/moment': 2.16.1
       '@emotion/react': 11.10.6(@types/react@18.2.0)(react@18.2.0)
       '@emotion/styled': 11.10.6(@emotion/react@11.10.6)(@types/react@18.2.0)(react@18.2.0)
-      '@mui/base': 5.0.0-beta.2(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/base': 5.0.0-beta.29(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
       '@mui/material': 5.15.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.2.0)(react-dom@18.2.0)(react@18.2.0)
-      '@mui/system': 5.13.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.2.0)(react@18.2.0)
+      '@mui/system': 5.15.2(@emotion/react@11.10.6)(@emotion/styled@11.10.6)(@types/react@18.2.0)(react@18.2.0)
       '@mui/utils': 5.12.0(react@18.2.0)
       '@types/react-transition-group': 4.4.5
       clsx: 1.2.1
@@ -952,10 +832,6 @@ packages:
     dev: true
     optional: true
 
-  /@popperjs/core@2.11.7:
-    resolution: {integrity: sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==}
-    dev: true
-
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: true
@@ -1016,12 +892,6 @@ packages:
 
   /@types/react-is@17.0.3:
     resolution: {integrity: sha512-aBTIWg1emtu95bLTLx0cpkxwGW3ueZv71nE2YFBpL8k/z5czEW8yYpOo8Dp+UUAFAtKwNaOsh/ioSeQnWlZcfw==}
-    dependencies:
-      '@types/react': 18.2.0
-    dev: true
-
-  /@types/react-is@18.2.0:
-    resolution: {integrity: sha512-1vz2yObaQkLL7YFe/pme2cpvDsCwI1WXIfL+5eLz0MI9gFG24Re16RzUsI8t9XZn9ZWvgLNDrJBmrqXJO7GNQQ==}
     dependencies:
       '@types/react': 18.2.0
     dev: true
@@ -1260,9 +1130,11 @@ packages:
     resolution: {integrity: sha512-acv43vqJ0+N0rD+Uw3pDHSxP30FHrywu2NO6/wBaHChJIizpDeBUd6NjqhNhy9LGaEAhZAXn46QzmlAvIWd16g==}
     dev: true
 
-  /chart.js@4.0.1:
-    resolution: {integrity: sha512-5/8/9eBivwBZK81mKvmIwTb2Pmw4D/5h1RK9fBWZLLZ8mCJ+kfYNmV9rMrGoa5Hgy2/wVDBMLSUDudul2/9ihA==}
-    engines: {pnpm: ^7.0.0}
+  /chart.js@4.4.7:
+    resolution: {integrity: sha512-pwkcKfdzTMAU/+jNosKhNL2bHtJc/sSmYgVbuGTEDhzkrhmyihmP7vUc/5ZK9WopidMDHNe3Wm7jOd/WhuHWuw==}
+    engines: {pnpm: '>=8'}
+    dependencies:
+      '@kurkle/color': 0.3.4
     dev: true
 
   /chokidar@3.5.3:
@@ -2120,13 +1992,13 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /react-chartjs-2@5.2.0(chart.js@4.0.1)(react@18.2.0):
+  /react-chartjs-2@5.2.0(chart.js@4.4.7)(react@18.2.0):
     resolution: {integrity: sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==}
     peerDependencies:
       chart.js: ^4.1.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      chart.js: 4.0.1
+      chart.js: 4.4.7
       react: 18.2.0
     dev: true
 
